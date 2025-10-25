@@ -11,10 +11,16 @@ export default function UseStateHook() {
     <View style={styles.container}>
       <StatusBar style="auto" />
 
-      <Text style={styles.respostaText}>{valor}</Text>
+      <Text style={styles.respostaText}>{numero}</Text>
       <Divider style={styles.divider}/>
-      <TouchableOpacity style={[styles.btn, styles.btnAumenta]} onPress={() => { setValor(valor + 1); }}>
-        <Text style={styles.btnText}>Aumentar Valor</Text>
+      <TouchableOpacity style={[styles.btn, styles.btnAumenta]} onPress={() => { setNumero(numero + 1); }}>
+        <Text style={styles.btnText}>Aumentar valor</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={[styles.btn, styles.btndimi]} onPress={() => { setNumero(numero - 1); }}>
+        <Text style={styles.btnText}>Diminui valor</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={[styles.btn, styles.btnmult]} onPress={() => { setNumero(numero * 2); }}>
+        <Text style={styles.btnText}>Multiplicar Valor</Text>
       </TouchableOpacity>
     </View>
   );
@@ -39,6 +45,12 @@ const styles = StyleSheet.create({
   },
   btnAumenta: {
     backgroundColor: 'green'
+  },
+  btndimi: {
+    backgroundColor: 'red'
+  },
+  btnmult: {
+    backgroundColor: 'blue'
   },
   btnText: {
     color: '#fff'

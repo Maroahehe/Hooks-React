@@ -5,8 +5,7 @@ import UseReducerHook from './components/UseReducerHook';
 export default function App() {
   return (
     <>
-      {/*<UseStateHook/>*/}
-      <UseReducerHook/>
+      <UseStateHook/>
     </>
   );
 }
