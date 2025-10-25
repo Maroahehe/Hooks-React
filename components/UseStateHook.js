@@ -5,16 +5,7 @@ import { Divider } from 'react-native-paper';
 
 export default function UseStateHook() {
 
-    const [valor, setValor] = useState(0);
-    //useState retorna dois valores: o estado (valor) e a função de 
-    //alteração do estado (que altera o valor do estado "valor");
-
-    //Funcionamento dos estados:
-    //Toda vez que o valor do estado do componente for alterado, 
-    //ele renderiza novamente o seu conteúdo.
-
-    //Na prática: toda vez que o setValor for invocado, o valor do estado
-    //será alterado e o componente renderizado de novo.
+    const [numero, setNumero] = useState(0);
 
   return (
     <View style={styles.container}>
@@ -22,17 +13,8 @@ export default function UseStateHook() {
 
       <Text style={styles.respostaText}>{valor}</Text>
       <Divider style={styles.divider}/>
-      <TouchableOpacity style={[styles.btn, styles.btnAumenta]} onPress={() => {
-            setValor(valor + 1);
-            console.log(valor);
-        }}>
+      <TouchableOpacity style={[styles.btn, styles.btnAumenta]} onPress={() => { setValor(valor + 1); }}>
         <Text style={styles.btnText}>Aumentar Valor</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={[styles.btn, styles.btnDiminui]} onPress={() => {
-            setValor(valor - 1);
-            console.log(valor);
-        }}>
-        <Text style={styles.btnText}>Diminuir Valor</Text>
       </TouchableOpacity>
     </View>
   );
@@ -57,9 +39,6 @@ const styles = StyleSheet.create({
   },
   btnAumenta: {
     backgroundColor: 'green'
-  },
-  btnDiminui: {
-    backgroundColor: 'red'
   },
   btnText: {
     color: '#fff'
